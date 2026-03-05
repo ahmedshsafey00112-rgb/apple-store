@@ -1,370 +1,1505 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<!-- Developer By CMSNT.CO | FB.COM/CMSNT.CO | ZALO.ME/0947838128 | MMO Solution -->
+<!doctype html>
+<html class="h-100">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iStore | Experience Innovation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="canonical" href="https://shafey-idstore.com/" />
+    <title>shafey id-store</title>
+    <meta name="description" content="High quality id store, all types and all domains." />
+    <meta name="keywords" content="apple id, icloud , hotmail id hotmail suffix">
+    <meta name="copyright" content="CMSNT.CO" />
+    <meta name="author" content="CMSNT.CO" />
+    <meta property="og:url" content="https://shafey-idstore.com/">
+    <meta property="og:site_name" content="https://shafey-idstore.com/" />
+    <meta property="og:title" content="shafey id-store" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image"
+        content="https://shafey-idstore.com/assets/storage/images/image_DWU.png" />
+    <meta property="og:image:secure"
+        content="https://shafey-idstore.com/assets/storage/images/image_DWU.png" />
+    <meta name="twitter:title" content="shafey id-store" />
+    <meta name="twitter:image"
+        content="https://shafey-idstore.com/assets/storage/images/image_DWU.png" />
+    <meta name="twitter:image:alt" content="shafey id-store" />
+    <link rel="icon" type="image/png" href="https://shafey-idstore.com/assets/storage/images/favicon_2V9.png" />
     <style>
-        :root {
-            --apple-black: #1d1d1f;
-            --apple-gray: #f5f5f7;
-            --apple-blue: #0071e3;
-            --text-dark: #333;
-            --white: #ffffff;
-            --transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', -apple-system, sans-serif;
-        }
-
-        body {
-            background-color: var(--white);
-            color: var(--apple-black);
-            line-height: 1.5;
-            overflow-x: hidden;
-        }
-
-        /* --- Navigation --- */
-        nav {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(20px);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-        }
-
-        .nav-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-            height: 48px;
-        }
-
-        .logo { font-weight: 600; font-size: 1.2rem; cursor: pointer; }
-
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a { 
-            text-decoration: none; 
-            color: var(--apple-black); 
-            font-size: 0.85rem; 
-            opacity: 0.8;
-            transition: var(--transition);
-        }
-        .nav-links a:hover { opacity: 1; }
-
-        .nav-icons { display: flex; gap: 20px; align-items: center; }
-        .cart-icon { position: relative; cursor: pointer; }
-        .cart-count {
-            position: absolute;
-            top: -8px;
-            right: -10px;
-            background: var(--apple-blue);
-            color: white;
-            font-size: 0.7rem;
-            padding: 2px 6px;
-            border-radius: 10px;
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            margin-top: 48px;
-            text-align: center;
-            padding: 80px 20px;
-            background: var(--apple-gray);
-        }
-        .hero h1 { font-size: 3.5rem; font-weight: 600; letter-spacing: -0.02em; }
-        .hero p { font-size: 1.5rem; color: #86868b; margin-bottom: 20px; }
-
-        /* --- Search Bar --- */
-        .search-container {
-            max-width: 500px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-        #productSearch {
-            width: 100%;
-            padding: 12px 20px;
-            border-radius: 10px;
-            border: 1px solid #d2d2d7;
-            background: var(--white);
-            font-size: 1rem;
-            outline: none;
-        }
-
-        /* --- Product Grid --- */
-        .shop-container {
-            max-width: 1200px;
-            margin: 50px auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 20px;
-        }
-
-        .product-card {
-            background: var(--white);
-            border-radius: 18px;
-            padding: 30px;
-            text-align: center;
-            transition: var(--transition);
-            border: 1px solid transparent;
-        }
-        .product-card:hover {
-            box-shadow: 0 20px 40px rgba(109, 3, 3, 0.08);
-            transform: translateY(-5px);
-        }
-
-        .product-image {
-            width: 100%;
-            height: 200px;
-            object-fit: contain;
-            margin-bottom: 20px;
-        }
-
-        .product-name { font-size: 1.4rem; font-weight: 600; margin-bottom: 10px; }
-        .product-price { color: #424245; margin-bottom: 20px; font-size: 1.1rem; }
-        
-        .btn-add {
-            background: var(--apple-blue);
-            color: white;
-            border: none;
-            padding: 10px 25px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-        .btn-add:hover { background: #0077ed; opacity: 0.9; }
-
-        /* --- Shopping Cart Sidebar --- */
-        .cart-sidebar {
-            position: fixed;
-            right: -400px;
-            top: 0;
-            width: 400px;
-            height: 100%;
-            background: white;
-            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-            z-index: 1001;
-            transition: var(--transition);
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-        }
-        .cart-sidebar.active { right: 0; }
-        
-        .cart-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-        .close-cart { cursor: pointer; font-size: 1.5rem; }
-
-        .cart-items { flex-grow: 1; overflow-y: auto; }
-        .cart-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px 0;
-            border-bottom: 1px solid var(--apple-gray);
-        }
-        .cart-item img { width: 60px; height: 60px; object-fit: contain; }
-        
-        .quantity-controls {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 5px;
-        }
-        .qty-btn {
-            background: var(--apple-gray);
-            border: none;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-        .cart-footer {
-            border-top: 1px solid #d2d2d7;
-            padding-top: 20px;
-        }
-        .total-row {
-            display: flex;
-            justify-content: space-between;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-        .checkout-btn {
-            width: 100%;
-            background: var(--apple-black);
-            color: white;
-            border: none;
-            padding: 15px;
-            border-radius: 12px;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .cart-sidebar { width: 100%; right: -100%; }
-        }
+    :root {
+        --primary: #000000;
+    }
     </style>
-</head>
-<body>
+    <style>
+    :root {
+        --primary1: #ffffff;
+    }
+    </style>
+    
+    <link rel="stylesheet" href="https://shafey-idstore.com/public/client/fonts/flaticon/flaticon.css">
+    <link rel="stylesheet" href="https://shafey-idstore.com/public/client/fonts/icofont/icofont.min.css">
+    <link rel="stylesheet" href="https://shafey-idstore.com/public/client/fonts/fontawesome/fontawesome.min.css">
+    <link rel="stylesheet" href="https://shafey-idstore.com/public/client/vendor/venobox/venobox.min.css">
+    <link rel="stylesheet" href="https://shafey-idstore.com/public/client/vendor/slickslider/slick.min.css">
+    <link rel="stylesheet" href="https://shafey-idstore.com/public/client/vendor/niceselect/nice-select.min.css">
+    <link rel="stylesheet" href="https://shafey-idstore.com/public/client/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://shafey-idstore.com/public/client/css/main.css">
+    <link rel="stylesheet" href="https://shafey-idstore.com/public/client/css/user-auth.css">
+    <link rel="stylesheet" href="https://shafey-idstore.com/public/client/css/index.css">
 
-    <nav>
-        <div class="nav-container">
-            <div class="logo">iStore</div>
-            <div class="nav-links">
-                <a href="#">Store</a>
-                <a href="#">icloud</a>
-                <a href="#">apple </a>
-                <a href="#">microsoft</a>
+    <link rel="stylesheet" href="https://shafey-idstore.com/public/fontawesome/css/all.min.css">
+
+    <!-- sweetalert2-->
+    <link class="main-stylesheet" href="https://shafey-idstore.com/public/sweetalert2/default.css" rel="stylesheet"
+        type="text/css">
+    <script src="https://shafey-idstore.com/public/sweetalert2/sweetalert2.js"></script>
+    <!-- Cute Alert -->
+    <link class="main-stylesheet" href="https://shafey-idstore.com/public/cute-alert/style.css" rel="stylesheet" type="text/css">
+    <script src="https://shafey-idstore.com/public/cute-alert/cute-alert.js"></script>
+    <!-- Simple Notify CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.css" />
+    <!-- Simple Notify JS -->
+    <script src="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://shafey-idstore.com/public/js/jquery-3.6.0.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+
+            
+<link rel="stylesheet" href="https://shafey-idstore.com/public/client/css/wallet.css">
+    <link rel="stylesheet" href="https://shafey-idstore.com/mod/css/main.css?v=19">
+    <script src="https://shafey-idstore.com/mod/js/main.js"></script> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+</head>
+
+<script>
+function showMessage(message, type) {
+  const commonOptions = {
+    effect: 'fade',
+    speed: 300,
+    customClass: null,
+    customIcon: null,
+    showIcon: true,
+    showCloseButton: true,
+    autoclose: true,
+    autotimeout: 3000,
+    gap: 20,
+    distance: 20,
+    type: 'outline',
+    position: 'right top'
+  };
+
+  const options = {
+    success: {
+      status: 'success',
+      title: '成功！',
+      text: message,
+    },
+    error: {
+      status: 'error',
+      title: '失败！',
+      text: message,
+    }
+  };
+  new Notify(Object.assign({}, commonOptions, options[type]));
+}
+
+</script>
+
+<style>
+body {
+    font-family: 'Saira Semi Condensed', sans-serif;}
+html {
+  scroll-behavior: smooth;
+}
+
+.feature-content {
+    padding-left: 0px;
+    border-left: none;
+}
+.product-disable::before {
+    position: absolute;
+    content: "缺货";
+    top: 89%;
+    left: 50%;
+    z-index: 2;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 0px;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: var(--primary-tshadow);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: var(--white);
+    background: rgba(224, 152, 22, 0.9);
+}
+</style>
+
+
+ 
+<body>
+    <div class="backdrop"></div><a class="backtop" href="#"><i class="fa-sharp fa-solid fa-chevron-up"></i></a>
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-5">
+                    <div class="header-top-welcome">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-3">
+                    <div class="header-top-select">
+                        <div class="header-select"><i class="icofont-world"></i>
+                                                        <select class="select" id="changeLanguage" onchange="changeLanguage()">
+                                                                <option value="2"
+                                    >English</option>
+                                                                <option value="20"
+                                    selected>Chinese</option>
+                                                            </select>
+                                                    </div>
+                        <div class="header-select"><i class="icofont-money"></i>
+                            <select class="select" id="changeCurrency" onchange="changeCurrency()">
+                                                                <option value="4"
+                                    selected>USD                                </option>
+                                                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7 col-lg-4">
+                    <ul class="header-top-list">
+                        <li><a href="https://shafey-idstore.com/client/policy">政策</a></li>
+                        <li><a href="https://shafey-idstore.com/client/faq">FAQ</a></li>
+                        <li><a href="https://shafey-idstore.com/client/contact">接触</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="nav-icons">
-                <div class="cart-icon" onclick="toggleCart()">
-                    🛒 <span class="cart-count" id="cartCount">0</span>
+        </div>
+    </div>
+    <header class="header-part">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-media-group">
+                    <button class="header-user"><i class="fa-solid fa-bars"></i></button>
+                    <a href="https://shafey-idstore.com/">
+                        <img src="https://shafey-idstore.com/assets/storage/images/logo_light_HM8.png" alt="logo"></a>
+                    <button class="header-src"><i class="fas fa-search"></i></button>
+                </div>
+                <a href="https://shafey-idstore.com/" class="header-logo"><img src="https://shafey-idstore.com/assets/storage/images/logo_light_HM8.png"
+                        alt="logo"></a>
+                <form class="header-form" method="GET" action="https://shafey-idstore.com/">
+                    <input type="hidden" name="action" value="home">
+                    <input type="text" name="keyword" value=""
+                        placeholder="搜索产品..."><button><i class="fas fa-search"></i></button>
+                </form>
+                <div class="header-widget-group">
+                    <a href="https://shafey-idstore.com/product-orders/" class="header-widget" title="Đơn hàng"><i
+                            class="fa-solid fa-cart-arrow-down"></i></a>
+                    <a href="https://shafey-idstore.com/client/favorites" class="header-widget"
+                        title="最喜欢的产品">
+                        <i class="fas fa-heart"></i>
+                        <sup
+                            id="numFavorites">0</sup>
+                    </a>
+                    <button class="header-widget header-cart" title="订金"><i
+                            class="fa-solid fa-building-columns"></i>
+
+                    </button>
+                                        <a href="https://shafey-idstore.com/client/login" class="header-widget" title="Login">
+                        <img src="https://shafey-idstore.com/assets/storage/images/avatar4N0.png" alt="user"><span>Login</span>
+                    </a>
+                                    </div>
+            </div>
+        </div>
+    </header>
+    <nav class="navbar-part">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="navbar-content">
+                        <ul class="navbar-list">
+                            <li class="navbar-item"><a class="navbar-link"
+                                    href="https://shafey-idstore.com/client/home">家</a>
+                            </li>
+                            <li class="navbar-item dropdown-megamenu"><a class="navbar-link dropdown-arrow"
+                                    href="#">产品</a>
+                                <div class="megamenu">
+                                    <div class="container">
+                                        <div class="row row-cols-5">
+                                                                                        <div class="col-4">
+                                                <div class="megamenu-wrap">
+                                                    <h5 class="megamenu-title">Apple ID high quality</h5>
+                                                    <ul class="megamenu-list">
+                                                                                                                <li><a href="https://shafey-idstore.com/category/apple-id-high-quality-usa"><img
+                                                                    width="25px"
+                                                                    src="https://shafey-idstore.com/assets/storage/images/35GT.png">
+                                                                Apple ID high quality USA</a></li>
+                                                                                                            </ul>
+                                                </div>
+                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="navbar-item dropdown">
+                                <a class="navbar-link dropdown-arrow" href="#">订金</a>
+                                <ul class="dropdown-position-list">
+                                                                                                                                                                                                                        <li><a href="https://shafey-idstore.com/?action=recharge-crypto"><img width="20px"
+                                                src="https://shafey-idstore.com/assets/img/icon-usdt.svg"> Crypto</a>
+                                    </li>
+                                                                                                                                                                                                                                                                                                                                     
+                                                                                                                                            </ul>
+                            </li>
+                            <li class="navbar-item dropdown">
+                                <a class="navbar-link dropdown-arrow" href="#">历史</a>
+                                <ul class="dropdown-position-list">
+                                    <li><a href="https://shafey-idstore.com/product-orders/">Lịch sử đơn hàng</a>
+                                    </li>
+                                    <li><a href="https://shafey-idstore.com/client/logs">活动日志</a></li>
+                                    <li><a href="https://shafey-idstore.com/client/transactions">余额波动</a>
+                                    </li>
+                                </ul>
+                            </li>
+                                                        <li class="navbar-item dropdown">
+                                <a class="navbar-link dropdown-arrow" href="#">Affiliate Program</a>
+                                <ul class="dropdown-position-list">
+                                    <li><a href="https://shafey-idstore.com/?action=affiliates">统计</a></li>
+                                    <li><a href="https://shafey-idstore.com/?action=affiliate-history">历史</a>
+                                    </li>
+                                    <li><a href="https://shafey-idstore.com/?action=affiliate-withdraw">提款</a>
+                                    </li>
+                                </ul>
+                            </li>
+                                                                                                                                                                    </ul>
+                        <div class="navbar-info-group">
+                            <div class="navbar-info"><i class="fa-solid fa-phone"></i>                                <p><small>Hotline</small><span>+201030085306</span></p>
+                            </div>
+                            <div class="navbar-info"><i class="fa-solid fa-envelope"></i>                                <p><small>Email</small><span>ahmed2002@gmail.com</span></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
-
-    <section class="hero">
-        <h1>Market ELsahfey fro apple id</h1>
-        <p>sell all apple id.</p>
-        <div class="search-container">
-            <input type="text" id="productSearch" placeholder="Search for products..." onkeyup="filterProducts()">
+    <aside class="category-sidebar">
+        <div class="category-header">
+            <h4 class="category-title"><i class="fas fa-align-left"></i><span>产品</span></h4><button
+                class="category-close"><i class="icofont-close"></i></button>
         </div>
-    </section>
-
-    <main class="shop-container" id="productGrid">
-        </main>
-
-    <div class="cart-sidebar" id="cartSidebar">
+        <!--menu mobile-->
+        <ul class="category-list">
+                        <li class="category-item">
+                <a class="category-link dropdown-link" href="#">
+                    <img src="https://shafey-idstore.com/assets/storage/images/icon08WT.png" style="margin-right: 10px;" width="30px">
+                    Apple ID high quality </a>
+                <ul class="dropdown-list">
+                                        <li><a href="https://shafey-idstore.com/category/apple-id-high-quality-usa">Apple ID high quality USA</a>
+                    </li>
+                                    </ul>
+            </li>
+                    </ul>
+    </aside>
+    <aside class="cart-sidebar">
         <div class="cart-header">
-            <h2>Your Bag</h2>
-            <span class="close-cart" onclick="toggleCart()">&times;</span>
+            <div class="cart-total"><i
+                    class="fa-solid fa-building-columns"></i><span>选择存款方式</span></div>
+            <button class="cart-close"><i class="icofont-close"></i></button>
         </div>
-        <div class="cart-items" id="cartItems">
+        <ul class="category-list">
+                                                                        <li class="category-item"><a class="category-link" href="https://shafey-idstore.com/?action=recharge-crypto"><img
+                        style="margin-right: 10px;" width="30px" src="https://shafey-idstore.com/assets/img/icon-usdt.svg">
+                    Crypto</a>
+            </li>
+                                                                        
+            
+                                                
+
+                    </ul>
+    </aside>
+    <aside class="nav-sidebar">
+        <div class="nav-header"><a href="https://shafey-idstore.com/"><img src="https://shafey-idstore.com/assets/storage/images/logo_light_HM8.png"
+                    alt="logo"></a><button class="nav-close"><i class="icofont-close"></i></button></div>
+        <div class="nav-content">
+            <div class="nav-btn">
+                                <a href="https://shafey-idstore.com/client/login" class="btn btn-inline">
+                    <i class="fa fa-unlock-alt"></i> <span>登录</span></a>
+                
             </div>
-        <div class="cart-footer">
-            <div class="total-row">
-                <span>Total</span>
-                <span id="cartTotal">$0.00</span>
+            <div class="nav-select-group">
+                <p>我的余额： <strong
+                        class="text-wallet">0</strong></p>
             </div>
-            <button class="checkout-btn" onclick="checkout()">Check Out</button>
+            <ul class="nav-list">
+                <li><a class="nav-link" href="https://shafey-idstore.com/client/home"><i
+                            class="icofont-home"></i>家</a></li>
+                <li><a class="nav-link dropdown-link" href="#"><i
+                            class="fa-solid fa-cart-shopping"></i>产品</a>
+                    <ul class="dropdown-list">
+                                                <li><a href="https://shafey-idstore.com/category/apple-id-high-quality-usa"><img width="25px"
+                                    class="me-2 active" src="https://shafey-idstore.com/assets/storage/images/35GT.png">
+                                Apple ID high quality USA</a></li>
+                                            </ul>
+                </li>
+                <li><a class="nav-link dropdown-link" href="#"><i
+                            class="fa-solid fa-building-columns"></i>订金</a>
+                    <ul class="dropdown-list">
+                                                                                                                                                <li><a href="https://shafey-idstore.com/?action=recharge-crypto"><img width="20px" class="me-2"
+                                    src="https://shafey-idstore.com/assets/img/icon-usdt.svg"> Crypto</a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                    </ul>
+                </li>
+                <li><a class="nav-link dropdown-link" href="#"><i
+                            class="fa-solid fa-clock-rotate-left"></i>历史</a>
+                    <ul class="dropdown-list">
+                        <li><a href="https://shafey-idstore.com/product-orders/">Lịch sử đơn hàng</a>
+                        </li>
+                        <li><a href="https://shafey-idstore.com/client/logs">活动日志</a></li>
+                        <li><a href="https://shafey-idstore.com/client/transactions">余额波动</a>
+                        </li>
+                    </ul>
+                </li>
+                                <li><a class="nav-link dropdown-link" href="#"><i
+                            class="fa-solid fa-money-bill-trend-up"></i>Affiliate Program</a>
+                    <ul class="dropdown-list">
+                        <li><a href="https://shafey-idstore.com/?action=affiliates">统计</a></li>
+                        <li><a href="https://shafey-idstore.com/?action=affiliate-history">历史</a>
+                        </li>
+                        <li><a href="https://shafey-idstore.com/?action=affiliate-withdraw">提款</a>
+                        </li>
+                    </ul>
+                </li>
+                                                                                                <li><a class="nav-link" href="https://shafey-idstore.com/client/logout"><i
+                            class="icofont-logout"></i>登出</a></li>
+            </ul>
+            <div class="nav-info-group">
+                <div class="nav-info"><i class="fa-solid fa-phone"></i>                    <p><span>+20 010455554545</span></p>
+                </div>
+                <div class="nav-info"><i class="fa-solid fa-envelope"></i>                    <p><span>ahmed2002@gmail.com</span></p>
+                </div>
+            </div>
         </div>
+    </aside>
+    <div class="mobile-menu">
+        <a href="https://shafey-idstore.com/client/home" title="家"
+            class=""><i
+                class="fas fa-home"></i><span>家</span></a>
+        <button class="cate-btn" title="产品"><i
+                class="fas fa-list"></i><span>产品</span></button>
+        <button
+            class="cart-btn "
+            title="订金"><i
+                class="fa-solid fa-building-columns"></i><span>订金</span></button>
+        <a href="https://shafey-idstore.com/product-orders"
+            class="" title="Đơn hàng"><i
+                class="fa-solid fa-cart-shopping"></i><span>Đơn hàng</span></a>
+        <a href="https://shafey-idstore.com/client/profile" title="Profile" class=""><i
+                class="fa-solid fa-user"></i><span>Thông tin</span></a>
     </div>
 
+
+
+
+
     <script>
-        // --- Product Data ---
-        const products = [
-            { id: 1, name: "apple outlook", price: 0.25, category: "apple id", img: "https://assets.nn.najah.edu/CACHE/images/uploads/weblog/2019/11/21/outlook-logo-5b106be0ff1b780036cb16f5/bbb81bc05347b866cbba18c050d8e580.jpg" },
-            { id: 2, name: "apple hotmail", price: 0.25, category: "hotmail", img: "https://blog.uniquez.co/wp-content/uploads/2022/01/%D8%A5%D9%86%D8%B4%D8%A7%D8%A1-%D8%AD%D8%B3%D8%A7%D8%A8-%D9%87%D9%88%D8%AA%D9%85%D9%8A%D9%84-Hotmail.webp" },
-            { id: 3, name: " apple gmail", price: 0.25, category: "gmail", img: "https://cdn.salla.sa/ZYKgn/sRW4Z0UoXP1YemVmvnVaKAIWfEZx7zamz7YKky00.png" },
-            { id: 4, name: "icloud", price: 0.25, category: "icloud", img: "https://cdn.arageek.com/magazine/2021/04/encyclopedia-%D8%A7%D8%B3%D8%AA%D8%AE%D8%AF%D8%A7%D9%85-%D8%AD%D8%B3%D8%A7%D8%A8%D8%A7%D8%AA-%D8%A2%D9%8A-%D9%83%D9%84%D8%A7%D9%88%D8%AF-iCloud.jpg" },
-            { id: 5, name: "apple id old", price: 0.25, category: "hotmail", img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-YSPviFiX3mYL3FOYzKx-n5gVHSrU4b4Se15OEcrRNW3CxWgPFLFYWTIB6hZOid6ODimv5PklwJxUEuwR9PMQp_Ma_kWHUD6TlIqAVY_-ejv6nkzCo94SwQhqA2QIH0GsbZtF6EbCaIE/s1600/%25D9%2583%25D9%258A%25D9%2581%25D9%258A%25D8%25A9+%25D8%25A5%25D9%2586%25D8%25B4%25D8%25A7%25D8%25A1+%25D8%25AD%25D8%25B3%25D8%25A7%25D8%25A8+%25D8%25B9%25D9%2584%25D9%2589+%25D9%2585%25D8%25AA%25D8%25AC%25D8%25B1+%25D8%25A2%25D8%25A8%25D9%2584.png" },
-            { id: 6, name: "icloud old id", price: 0.30, category: "gmail", img: "https://www.daemtube.com/wp-content/uploads/2021/10/%D8%A5%D9%86%D8%B4%D8%A7%D8%A1-%D8%AD%D8%B3%D8%A7%D8%A8-%D8%A3%D8%A8%D9%84-Apple-ID.jpg" }
-        ];
+    function changeLanguage() {
+        var id = document.getElementById("changeLanguage").value;
+        $.ajax({
+            url: "https://shafey-idstore.com/ajaxs/client/update.php",
+            method: "POST",
+            dataType: "JSON",
+            data: {
+                action: 'changeLanguage',
+                id: id
+            },
+            success: function(respone) {
+                if (respone.status == 'success') {
+                    location.reload();
+                } else {
+                    cuteAlert({
+                        type: "error",
+                        title: "Error",
+                        message: respone.msg,
+                        buttonText: "Okay"
+                    });
+                }
+            },
+            error: function() {
+                alert(html(response));
+                history.back();
+            }
+        });
+    }
+    </script>
+    <script>
+    function changeCurrency() {
+        var id = document.getElementById("changeCurrency").value;
+        $.ajax({
+            url: "https://shafey-idstore.com/ajaxs/client/update.php",
+            method: "POST",
+            dataType: "JSON",
+            data: {
+                action: 'changeCurrency',
+                id: id
+            },
+            success: function(respone) {
+                if (respone.status == 'success') {
+                    location.reload();
+                } else {
+                    cuteAlert({
+                        type: "error",
+                        title: "Error",
+                        message: respone.msg,
+                        buttonText: "Okay"
+                    });
+                }
+            },
+            error: function() {
+                alert(html(response));
+                history.back();
+            }
+        });
+    }
+    </script>
+<section class="section feature-part">
+    <div class="container">
+        <div class="mb-5">
 
-        let cart = [];
+        </div>
+        <div class="row mb-5">
+                        <div class="col-md-12">
+                <div class="account-card pt-3">
+                    <p><strong><span style="font-size:16px"><span style="background-color:#e74c3c"><font dir="auto" style="vertical-align:inherit"><font dir="auto" style="vertical-align:inherit">Apple id is for legal use only not for imessage or any bad use, any bad use will be considered out of warranty. If you have any problems please contact customer service-</font></font>Apple ID 仅限合法用途，不得用于 iMessage 或任何其他不当用途。任何不当使用都将导致保修失效。如有任何问题，请联系客服。<br />
+<br />
+Cheating and using for imessage, I will ban you and resell the IDs-作弊并使用 iMessage 账号，我会封禁你的账号并出售你的账号。</span></span></strong></p>
 
-        // --- Core Functions ---
+<p>&nbsp;</p>
 
-        function renderProducts(items) {
-            const grid = document.getElementById('productGrid');
-            grid.innerHTML = items.map(product => `
-                <div class="product-card">
-                    <img src="${product.img}" alt="${product.name}" class="product-image">
-                    <h3 class="product-name">${product.name}</h3>
-                    <p class="product-price">$${product.price.toLocaleString()}</p>
-                    <button class="btn-add" onclick="addToCart(${product.id})">Add to Bag</button>
+<p><strong><span style="font-size:16px"><font dir="auto" style="vertical-align:inherit"><font dir="auto" style="vertical-align:inherit">Account format : email----pass----birthdate----Q1----Q2----Q3</font></font></span></strong></p>
+
+<p>&nbsp;</p>
+
+<p><strong><span style="font-size:16px"><font dir="auto" style="vertical-align:inherit"><font dir="auto" style="vertical-align:inherit">If you need to test the product before depositing, kindly contact customer service...&nbsp; </font></font><br />
+<font dir="auto" style="vertical-align:inherit"><font dir="auto" style="vertical-align:inherit">Telegram username:@ahmedshafey0 2nd id: @@ahmedshafey0</font></font></span></strong></p>
+
+<p>&nbsp;</p>
+
+<p><strong><span style="font-size:16px"><font dir="auto" style="vertical-align:inherit"><font dir="auto" style="vertical-align:inherit">Please change the account info after buying for more safety measures. However, we never sell accounts twice.</font></font></span></strong></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><strong><span style="font-size:16px"><span style="background-color:#e74c3c"><font dir="auto" style="vertical-align:inherit"><font dir="auto" style="vertical-align:inherit">Apple ID仅供合法使用，不可用于imessage或任何不当使用，任何不当使用将被视为不予保修。</font></font></span><br />
+<span style="background-color:#e74c3c"><font dir="auto" style="vertical-align:inherit"><font dir="auto" style="vertical-align:inherit">如有任何问题，请联系客服&hellip;&hellip;</font></font></span></span></strong></p>
+
+<p>&nbsp;</p>
+
+<p><strong><span style="font-size:16px"><font dir="auto" style="vertical-align:inherit"><font dir="auto" style="vertical-align:inherit">账户格式：邮箱----密码----出生日期----Q1----Q2----Q3</font></font></span></strong></p>
+
+<p>&nbsp;</p>
+
+<p><strong><span style="font-size:16px"><font dir="auto" style="vertical-align:inherit"><font dir="auto" style="vertical-align:inherit">如果您需要在存款前测试产品，请联系客服... </font></font><br />
+<font dir="auto" style="vertical-align:inherit"><font dir="auto" style="vertical-align:inherit">Telegram 用户名：@@ahmedshafey0 第二个 ID：@@ahmedshafey0</font></font></span></strong></p>
+
+<p>&nbsp;</p>
+
+<p><strong><span style="font-size:16px"><font dir="auto" style="vertical-align:inherit"><font dir="auto" style="vertical-align:inherit">为了安全起见，请在购买后更改账户信息。但我们绝不会重复出售账户。</font></font></span></strong></p>
+
+<p>&nbsp;</p>
+
+<p><strong><span style="font-size:16px"><span style="background-color:#e74c3c"><font dir="auto" style="vertical-align:inherit"><font dir="auto" style="vertical-align:inherit">We don&#39;t guarantee the accounts if the mail domain changed !!!----如果邮件域名发生变化，我们将不保证帐户！ We don&#39;t guarantee the accounts if the mail domain </font></font><br />
+<font dir="auto" style="vertical-align:inherit"><font dir="auto" style="vertical-align:inherit">changed !!!----如果</font></font><br />
+<font dir="auto" style="vertical-align:inherit"><font dir="auto" style="vertical-align:inherit">邮件域名发生变化，我们将不保证帐户！ We don&#39;t guarantee the accounts if the mail domain changed </font><font dir="auto" style="vertical-align:inherit">!!!----如果邮件域名发生变化，我们将不保证帐户！</font></font></span></span></strong><br />
+<br />
+<strong><font dir="auto" style="vertical-align:inherit"><font dir="auto" style="vertical-align:inherit">Don&#39;t forget to join our telegram group. (t.me/storeidshafey)</font></font><br />
+<font dir="auto" style="vertical-align:inherit"><font dir="auto" style="vertical-align:inherit">别忘了加入我们的 Telegram 群组。 (t.me/storeidshafey)</font></font></strong></p>
                 </div>
-            `).join('');
-        }
+            </div>
+            
+            
+            <br>
 
-        function filterProducts() {
-            const query = document.getElementById('productSearch').value.toLowerCase();
-            const filtered = products.filter(p => p.name.toLowerCase().includes(query));
-            renderProducts(filtered);
-        }
 
-        function toggleCart() {
-            document.getElementById('cartSidebar').classList.toggle('active');
-        }
 
-        function addToCart(productId) {
-            const product = products.find(p => p.id === productId);
-            const exists = cart.find(item => item.id === productId);
+            <div class="col-xl-9">
+                                <ul class="custom-button-list">
+                    <li><a class="btn-category-home active" href="https://shafey-idstore.com/"><i
+                                class="fa-solid fa-cart-shopping me-2"></i>所有产品</a>
+                    </li>
+                                        <li><a class="btn-category-home "
+                            href="https://shafey-idstore.com/category/apple-id-high-quality-usa"><img
+                                src="https://shafey-idstore.com/assets/storage/images/35GT.png" width="25px" alt="Apple ID high quality USA"
+                                class="me-2">Apple ID high quality USA</a></li>
+                                    </ul>
+                                                                    <div class="row">
+                                        <div class="col-lg-12 mb-5" id="category2">
+                                                <div class="home-heading mb-3">
+                            <h3>
+                                <img src="https://shafey-idstore.com/assets/storage/images/35GT.png">
+                                Apple ID high quality USA                            </h3>
+                        </div>
+                        <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-1">
+                                                                                                                <div>
+                                <div class="feature-card ">
+                                    <div class="feature-content">
+                                        <div class="row">
+                                            <div class="col-8 col-md-9">
+                                                <h6 class="feature-name">
+                                                    <a
+                                                        href="https://shafey-idstore.com/product/apple-id-icloud-suffix--open-icloud--can-download">Brand new Apple ID Icloud suffix- open icloud 5gb- can download----全新Apple ID icloud后缀-开通icloud 5gb-可下载</a>
+                                                </h6>
+                                                <p class="feature-desc"><i class="fa-solid fa-angles-right"></i>
+                                                    48h after sales services///48小时售后服务</p>
+                                                <div class="row">
+                                                                                                        <div class="col-12 col-md-12">
+                                                        <label class="label-text feat">仓库：                                                            <b>1.047</b></label>
+                                                                                                                <label class="label-text order">卖：                                                            <b>60.058</b></label>
+                                                                                                                                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4 col-md-3">
+                                                <div class="card-price-product-list">
+                                                    <h5 class="feature-price">
+                                                        <span>$0.27</span>
+                                                    </h5>
+                                                </div>
+                                                <button id="openModal_1"
+                                                    onclick="openModal(``, `1`)"
+                                                    class="btn-buy"
+                                                    data-id="1">立即购买</button>
 
-            if (exists) {
-                exists.quantity++;
-            } else {
-                cart.push({ ...product, quantity: 1 });
-            }
-            updateCartUI();
-        }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                                                                                <div>
+                                <div class="feature-card ">
+                                    <div class="feature-content">
+                                        <div class="row">
+                                            <div class="col-8 col-md-9">
+                                                <h6 class="feature-name">
+                                                    <a
+                                                        href="https://shafey-idstore.com/product/icloud-apple-id-with-icloud-and-app-store-not-activated-1gb-and-not-passed-inspectionicloud-apple-id--icloud--app-store1gb-">Brand new iCloud created from 1 month ago, passed inspection (app store activated) ////一个月前创建的全新 iCloud，已通过审核（已在 App Store 激活）</a>
+                                                </h6>
+                                                <p class="feature-desc"><i class="fa-solid fa-angles-right"></i>
+                                                    48小时售后服务</p>
+                                                <div class="row">
+                                                                                                        <div class="col-12 col-md-12">
+                                                        <label class="label-text feat">仓库：                                                            <b>3.658</b></label>
+                                                                                                                <label class="label-text order">卖：                                                            <b>112.788</b></label>
+                                                                                                                                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4 col-md-3">
+                                                <div class="card-price-product-list">
+                                                    <h5 class="feature-price">
+                                                        <span>$0.25</span>
+                                                    </h5>
+                                                </div>
+                                                <button id="openModal_7"
+                                                    onclick="openModal(``, `7`)"
+                                                    class="btn-buy"
+                                                    data-id="7">立即购买</button>
 
-        function changeQuantity(id, delta) {
-            const item = cart.find(i => i.id === id);
-            item.quantity += delta;
-            if (item.quantity < 1) {
-                cart = cart.filter(i => i.id !== id);
-            }
-            updateCartUI();
-        }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                                                                                <div>
+                                <div class="feature-card ">
+                                    <div class="feature-content">
+                                        <div class="row">
+                                            <div class="col-8 col-md-9">
+                                                <h6 class="feature-name">
+                                                    <a
+                                                        href="https://shafey-idstore.com/product/2fa-gmail-apple-id--authorization-phone-number-code-app-store-activated-pure-white--2fa-gmail-apple-id-app-store-">2fa Gmail apple id  (authorization phone number code) app store activated pure white///- 2fa Gmail Apple ID（授权电话号码代码）已激活 App Store 纯白色</a>
+                                                </h6>
+                                                <p class="feature-desc"><i class="fa-solid fa-angles-right"></i>
+                                                    3 days after sales services///售后服务3天</p>
+                                                <div class="row">
+                                                                                                        <div class="col-12 col-md-12">
+                                                        <label class="label-text feat">仓库：                                                            <b>206</b></label>
+                                                                                                                <label class="label-text order">卖：                                                            <b>5</b></label>
+                                                                                                                                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4 col-md-3">
+                                                <div class="card-price-product-list">
+                                                    <h5 class="feature-price">
+                                                        <span>$0.15</span>
+                                                    </h5>
+                                                </div>
+                                                <button id="openModal_10"
+                                                    onclick="openModal(``, `10`)"
+                                                    class="btn-buy"
+                                                    data-id="10">立即购买</button>
 
-        function updateCartUI() {
-            const cartItems = document.getElementById('cartItems');
-            const cartCount = document.getElementById('cartCount');
-            const cartTotal = document.getElementById('cartTotal');
-
-            cartItems.innerHTML = cart.map(item => `
-                <div class="cart-item">
-                    <img src="${item.img}" alt="${item.name}">
-                    <div style="flex-grow:1">
-                        <h4>${item.name}</h4>
-                        <p>$${item.price}</p>
-                        <div class="quantity-controls">
-                            <button class="qty-btn" onclick="changeQuantity(${item.id}, -1)">-</button>
-                            <span>${item.quantity}</span>
-                            <button class="qty-btn" onclick="changeQuantity(${item.id}, 1)">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                    </div>
+                        
+                                            </div>
+                                    </div>
+                            </div>
+                        <div class="col-xl-3">
+                <div class="account-card card-wallet-home py-4">
+                                        <ul class="user-form-social">
+                        <li><a href="https://shafey-idstore.com/client/login" class="facebook"><i
+                                    class="fa-solid fa-right-to-bracket"></i> 登录</a>
+                        </li>
+                        <li><a href="https://shafey-idstore.com/client/register" class="google"><i
+                                    class="fa-solid fa-user-plus"></i> 注册账户</a>
+                        </li>
+                    </ul>
+                                    </div>
+            </div>
+                    </div>
+                <div class="row">
+            <div class="col-lg-6 mb-3">
+                <div class="home-heading mb-3">
+                    <h3><i class="fa-solid fa-cart-shopping m-2"></i> 近期订单                    </h3>
+                </div>
+                <div style="height:350px;overflow-x:hidden;overflow-y:auto;">
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-10 col-md-10">
+                                                                        <b style="color: green;">...206</b> mua <b style="color: red;">8</b> <b>Brand new iCloud created from ...</b> với giá <b style="color:blue;">$2.00</b>                                </div>
+                                <div class="col-2 col-md-2">
+                                    <span class="badge bg-primary">30 分钟前</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-10 col-md-10">
+                                                                        <b style="color: green;">...e20</b> mua <b style="color: red;">1</b> <b>Brand new iCloud created from ...</b> với giá <b style="color:blue;">$0.25</b>                                </div>
+                                <div class="col-2 col-md-2">
+                                    <span class="badge bg-primary">3 以前的</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-10 col-md-10">
+                                                                        <b style="color: green;">...ari</b> mua <b style="color: red;">1</b> <b>2fa Gmail apple id  (authoriza...</b> với giá <b style="color:blue;">$0.15</b>                                </div>
+                                <div class="col-2 col-md-2">
+                                    <span class="badge bg-primary">3 以前的</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-10 col-md-10">
+                                                                        <b style="color: green;">...ang</b> mua <b style="color: red;">100</b> <b>Brand new Apple ID Icloud suff...</b> với giá <b style="color:blue;">$27.00</b>                                </div>
+                                <div class="col-2 col-md-2">
+                                    <span class="badge bg-primary">4 以前的</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-10 col-md-10">
+                                                                        <b style="color: green;">...888</b> mua <b style="color: red;">50</b> <b>Brand new iCloud created from ...</b> với giá <b style="color:blue;">$12.50</b>                                </div>
+                                <div class="col-2 col-md-2">
+                                    <span class="badge bg-primary">4 以前的</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-10 col-md-10">
+                                                                        <b style="color: green;">...ari</b> mua <b style="color: red;">200</b> <b>Brand new iCloud created from ...</b> với giá <b style="color:blue;">$50.00</b>                                </div>
+                                <div class="col-2 col-md-2">
+                                    <span class="badge bg-primary">4 以前的</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-10 col-md-10">
+                                                                        <b style="color: green;">...010</b> mua <b style="color: red;">1</b> <b>Brand new Apple ID Icloud suff...</b> với giá <b style="color:blue;">$0.27</b>                                </div>
+                                <div class="col-2 col-md-2">
+                                    <span class="badge bg-primary">5 以前的</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-10 col-md-10">
+                                                                        <b style="color: green;">...010</b> mua <b style="color: red;">1</b> <b>Brand new Apple ID Icloud suff...</b> với giá <b style="color:blue;">$0.27</b>                                </div>
+                                <div class="col-2 col-md-2">
+                                    <span class="badge bg-primary">5 以前的</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-10 col-md-10">
+                                                                        <b style="color: green;">...631</b> mua <b style="color: red;">495</b> <b>Brand new iCloud created from ...</b> với giá <b style="color:blue;">$123.75</b>                                </div>
+                                <div class="col-2 col-md-2">
+                                    <span class="badge bg-primary">7 以前的</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-10 col-md-10">
+                                                                        <b style="color: green;">...631</b> mua <b style="color: red;">5</b> <b>Brand new iCloud created from ...</b> với giá <b style="color:blue;">$1.25</b>                                </div>
+                                <div class="col-2 col-md-2">
+                                    <span class="badge bg-primary">7 以前的</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-10 col-md-10">
+                                                                        <b style="color: green;">...ari</b> mua <b style="color: red;">679</b> <b>Brand new iCloud created from ...</b> với giá <b style="color:blue;">$169.75</b>                                </div>
+                                <div class="col-2 col-md-2">
+                                    <span class="badge bg-primary">7 以前的</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-10 col-md-10">
+                                                                        <b style="color: green;">...ari</b> mua <b style="color: red;">100</b> <b>Brand new iCloud created from ...</b> với giá <b style="color:blue;">$25.00</b>                                </div>
+                                <div class="col-2 col-md-2">
+                                    <span class="badge bg-primary">8 以前的</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-10 col-md-10">
+                                                                        <b style="color: green;">...ara</b> mua <b style="color: red;">200</b> <b>Brand new iCloud created from ...</b> với giá <b style="color:blue;">$50.00</b>                                </div>
+                                <div class="col-2 col-md-2">
+                                    <span class="badge bg-primary">9 以前的</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-10 col-md-10">
+                                                                        <b style="color: green;">...ari</b> mua <b style="color: red;">632</b> <b>Brand new iCloud created from ...</b> với giá <b style="color:blue;">$158.00</b>                                </div>
+                                <div class="col-2 col-md-2">
+                                    <span class="badge bg-primary">9 以前的</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-10 col-md-10">
+                                                                        <b style="color: green;">...ara</b> mua <b style="color: red;">100</b> <b>Brand new iCloud created from ...</b> với giá <b style="color:blue;">$25.00</b>                                </div>
+                                <div class="col-2 col-md-2">
+                                    <span class="badge bg-primary">9 以前的</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-10 col-md-10">
+                                                                        <b style="color: green;">...dsu</b> mua <b style="color: red;">96</b> <b>Brand new iCloud created from ...</b> với giá <b style="color:blue;">$24.00</b>                                </div>
+                                <div class="col-2 col-md-2">
+                                    <span class="badge bg-primary">9 以前的</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-10 col-md-10">
+                                                                        <b style="color: green;">...123</b> mua <b style="color: red;">5</b> <b>Brand new iCloud created from ...</b> với giá <b style="color:blue;">$1.25</b>                                </div>
+                                <div class="col-2 col-md-2">
+                                    <span class="badge bg-primary">9 以前的</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-10 col-md-10">
+                                                                        <b style="color: green;">...010</b> mua <b style="color: red;">2</b> <b>Brand new Apple ID Icloud suff...</b> với giá <b style="color:blue;">$0.54</b>                                </div>
+                                <div class="col-2 col-md-2">
+                                    <span class="badge bg-primary">10 以前的</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-10 col-md-10">
+                                                                        <b style="color: green;">...001</b> mua <b style="color: red;">20</b> <b>Brand new Apple ID Icloud suff...</b> với giá <b style="color:blue;">$5.40</b>                                </div>
+                                <div class="col-2 col-md-2">
+                                    <span class="badge bg-primary">11 以前的</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-10 col-md-10">
+                                                                        <b style="color: green;">...123</b> mua <b style="color: red;">2</b> <b>Brand new iCloud created from ...</b> với giá <b style="color:blue;">$0.50</b>                                </div>
+                                <div class="col-2 col-md-2">
+                                    <span class="badge bg-primary">11 以前的</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    </div>
+            </div>
+            <div class="col-lg-6 mb-3">
+                <div class="home-heading mb-3">
+                    <h3><i class="fa-solid fa-credit-card m-2"></i> 最近存款                    </h3>
                 </div>
-            `).join('');
+                <div style="height:350px;overflow-x:hidden;overflow-y:auto;">
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-9 col-md-10">
+                                                                        <b style="color: green;">...ang</b> thực hiện nạp <b style="color:blue;">$50.06</b> bằng <b style="color:red;">USDT</b> thực nhận <b style="color:blue;">$50.06</b>                                </div>
+                                <div class="col-3 col-md-2">
+                                    <span class="badge bg-primary">4 以前的</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-9 col-md-10">
+                                                                        <b style="color: green;">...ara</b> thực hiện nạp <b style="color:blue;">$50.05</b> bằng <b style="color:red;">USDT</b> thực nhận <b style="color:blue;">$50.05</b>                                </div>
+                                <div class="col-3 col-md-2">
+                                    <span class="badge bg-primary">9 以前的</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-9 col-md-10">
+                                                                        <b style="color: green;">...ara</b> thực hiện nạp <b style="color:blue;">$25.05</b> bằng <b style="color:red;">USDT</b> thực nhận <b style="color:blue;">$25.05</b>                                </div>
+                                <div class="col-3 col-md-2">
+                                    <span class="badge bg-primary">9 以前的</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-9 col-md-10">
+                                                                        <b style="color: green;">...ara</b> thực hiện nạp <b style="color:blue;">$27.10</b> bằng <b style="color:red;">USDT</b> thực nhận <b style="color:blue;">$27.10</b>                                </div>
+                                <div class="col-3 col-md-2">
+                                    <span class="badge bg-primary">12 以前的</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-9 col-md-10">
+                                                                        <b style="color: green;">...123</b> thực hiện nạp <b style="color:blue;">$50.02</b> bằng <b style="color:red;">USDT</b> thực nhận <b style="color:blue;">$50.02</b>                                </div>
+                                <div class="col-3 col-md-2">
+                                    <span class="badge bg-primary">昨天</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-9 col-md-10">
+                                                                        <b style="color: green;">...001</b> thực hiện nạp <b style="color:blue;">$20.03</b> bằng <b style="color:red;">USDT</b> thực nhận <b style="color:blue;">$20.03</b>                                </div>
+                                <div class="col-3 col-md-2">
+                                    <span class="badge bg-primary">昨天</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-9 col-md-10">
+                                                                        <b style="color: green;">...ang</b> thực hiện nạp <b style="color:blue;">$50.05</b> bằng <b style="color:red;">USDT</b> thực nhận <b style="color:blue;">$50.05</b>                                </div>
+                                <div class="col-3 col-md-2">
+                                    <span class="badge bg-primary">2 前一天</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-9 col-md-10">
+                                                                        <b style="color: green;">...808</b> thực hiện nạp <b style="color:blue;">$50.07</b> bằng <b style="color:red;">USDT</b> thực nhận <b style="color:blue;">$50.07</b>                                </div>
+                                <div class="col-3 col-md-2">
+                                    <span class="badge bg-primary">2 前一天</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-9 col-md-10">
+                                                                        <b style="color: green;">...ong</b> thực hiện nạp <b style="color:blue;">$20.09</b> bằng <b style="color:red;">USDT</b> thực nhận <b style="color:blue;">$20.09</b>                                </div>
+                                <div class="col-3 col-md-2">
+                                    <span class="badge bg-primary">2 前一天</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-9 col-md-10">
+                                                                        <b style="color: green;">...lee</b> thực hiện nạp <b style="color:blue;">$75.08</b> bằng <b style="color:red;">USDT</b> thực nhận <b style="color:blue;">$75.08</b>                                </div>
+                                <div class="col-3 col-md-2">
+                                    <span class="badge bg-primary">2 前一天</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-9 col-md-10">
+                                                                        <b style="color: green;">...123</b> thực hiện nạp <b style="color:blue;">$30.05</b> bằng <b style="color:red;">USDT</b> thực nhận <b style="color:blue;">$30.05</b>                                </div>
+                                <div class="col-3 col-md-2">
+                                    <span class="badge bg-primary">2 前一天</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-9 col-md-10">
+                                                                        <b style="color: green;">...e20</b> thực hiện nạp <b style="color:blue;">$15.02</b> bằng <b style="color:red;">USDT</b> thực nhận <b style="color:blue;">$15.02</b>                                </div>
+                                <div class="col-3 col-md-2">
+                                    <span class="badge bg-primary">3 前一天</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-9 col-md-10">
+                                                                        <b style="color: green;">...lee</b> thực hiện nạp <b style="color:blue;">$150.04</b> bằng <b style="color:red;">USDT</b> thực nhận <b style="color:blue;">$150.04</b>                                </div>
+                                <div class="col-3 col-md-2">
+                                    <span class="badge bg-primary">3 前一天</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-9 col-md-10">
+                                                                        <b style="color: green;">...888</b> thực hiện nạp <b style="color:blue;">$200.06</b> bằng <b style="color:red;">USDT</b> thực nhận <b style="color:blue;">$200.06</b>                                </div>
+                                <div class="col-3 col-md-2">
+                                    <span class="badge bg-primary">3 前一天</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-9 col-md-10">
+                                                                        <b style="color: green;">...ari</b> thực hiện nạp <b style="color:blue;">$10.06</b> bằng <b style="color:red;">USDT</b> thực nhận <b style="color:blue;">$10.06</b>                                </div>
+                                <div class="col-3 col-md-2">
+                                    <span class="badge bg-primary">3 前一天</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-9 col-md-10">
+                                                                        <b style="color: green;">...ari</b> thực hiện nạp <b style="color:blue;">$10.05</b> bằng <b style="color:red;">USDT</b> thực nhận <b style="color:blue;">$10.05</b>                                </div>
+                                <div class="col-3 col-md-2">
+                                    <span class="badge bg-primary">3 前一天</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-9 col-md-10">
+                                                                        <b style="color: green;">...123</b> thực hiện nạp <b style="color:blue;">$40.00</b> bằng <b style="color:red;">USDT</b> thực nhận <b style="color:blue;">$40.00</b>                                </div>
+                                <div class="col-3 col-md-2">
+                                    <span class="badge bg-primary">3 前一天</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-9 col-md-10">
+                                                                        <b style="color: green;">...631</b> thực hiện nạp <b style="color:blue;">$100.09</b> bằng <b style="color:red;">USDT</b> thực nhận <b style="color:blue;">$100.09</b>                                </div>
+                                <div class="col-3 col-md-2">
+                                    <span class="badge bg-primary">3 前一天</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-9 col-md-10">
+                                                                        <b style="color: green;">...bai</b> thực hiện nạp <b style="color:blue;">$130.03</b> bằng <b style="color:red;">USDT</b> thực nhận <b style="color:blue;">$130.03</b>                                </div>
+                                <div class="col-3 col-md-2">
+                                    <span class="badge bg-primary">3 前一天</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="row">
+                                <div class="col-9 col-md-10">
+                                                                        <b style="color: green;">...123</b> thực hiện nạp <b style="color:blue;">$1.811.09</b> bằng <b style="color:red;">USDT</b> thực nhận <b style="color:blue;">$1.811.09</b>                                </div>
+                                <div class="col-3 col-md-2">
+                                    <span class="badge bg-primary">4 前一天</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    </div>
+            </div>
+        </div>
+        
 
-            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+    </div>
+</section>
 
-            cartTotal.innerText = `$${total.toLocaleString()}`;
-            cartCount.innerText = count;
+
+
+
+<div class="modal fade" id="openModal" tabindex="-1" aria-labelledby="modal-block-popout" role="dialog"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div id="modalContent"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+function openModal(token, id) {
+    $("#modalContent").html('');
+    var originalButtonContent = $('#openModal_' + id).html();
+    $('#openModal_' + id).html('<span><i class="fa fa-spinner fa-spin"></i> Processing...</span>')
+        .prop('disabled',
+            true);
+    $.ajax({
+        url: "https://shafey-idstore.com/ajaxs/client/modal/view-product.php",
+        method: "GET",
+        data: {
+            id: id,
+            token: token
+        },
+        success: function(data) {
+            $("#modalContent").html(data);
+            $('#openModal').modal('show');
+            $('#openModal_' + id).html(originalButtonContent).prop('disabled', false);
+        },
+        error: function() {
+            Swal.fire('失败！', data, 'error');
         }
+    });
+}
+</script>
 
-        function checkout() {
-            if (cart.length === 0) return alert("Your bag is empty!");
-            alert("Order placed successfully! Thank you for shopping with iStore.");
-            cart = [];
-            updateCartUI();
-            toggleCart();
-        }
 
-        // Initialize
-        renderProducts(products);
-    </script>
+
+
+<ul id="top-menu-right">
+    <li>
+        <a class="menu-item" id="toggle-menu-button">
+            <i class="fa-solid fa-eye-slash"></i>
+            <span>Đóng menu</span></a>
+    </li>
+    <li>
+        <a class="menu-item" href="https://shafey-idstore.com/client/favorites">
+            <i class="fa-solid fa-heart" style="color:red;"></i></i>
+            <span>最喜欢的产品</span></a>
+    </li>
+        <li>
+        <a class="menu-item "
+            href="https://shafey-idstore.com/category/apple-id-high-quality-usa"><i>
+                <img alt="Apple ID high quality USA" src="https://shafey-idstore.com/assets/storage/images/35GT.png"></i>
+            <span>Apple ID high quality USA</span></a>
+    </li>
+    </ul>
+<script>
+// JavaScript để ẩn/hiện menu khi click vào nút
+const toggleMenuButton = document.getElementById('toggle-menu-button');
+const topMenu = document.getElementById('top-menu-right');
+toggleMenuButton.addEventListener('click', function() {
+    topMenu.classList.toggle('hidden');
+});
+</script>
+
+
+
+
+
+
+<div class="hotline-phone-ring-wrap">
+    <div class="hotline-phone-ring">
+        <div class="hotline-phone-ring-circle"></div>
+        <div class="hotline-phone-ring-circle-fill"></div>
+        <div class="hotline-phone-ring-img-circle">
+            <a href="tel:+201030085306" class="pps-btn-img">
+                <img src="https://shafey-idstore.com/mod/img/icon-call-nh.png" alt="Gọi điện thoại" width="50">
+            </a>
+        </div>
+    </div>
+    <div class="hotline-bar">
+        <a href="tel:+201030085306">
+            <span class="text-hotline">+201030085306</span>
+        </a>
+    </div>
+</div>
+
+<style>
+.hotline-phone-ring-wrap {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    z-index: 999999;
+}
+
+.hotline-phone-ring {
+    position: relative;
+    visibility: visible;
+    background-color: transparent;
+    width: 110px;
+    height: 110px;
+    cursor: pointer;
+    z-index: 11;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transition: visibility .5s;
+    left: 0;
+    bottom: 0;
+    display: block;
+}
+
+.hotline-phone-ring-circle {
+    width: 85px;
+    height: 85px;
+    top: 10px;
+    left: 10px;
+    position: absolute;
+    background-color: transparent;
+    border-radius: 100%;
+    border: 2px solid #e60808;
+    -webkit-animation: phonering-alo-circle-anim 1.2s infinite ease-in-out;
+    animation: phonering-alo-circle-anim 1.2s infinite ease-in-out;
+    transition: all .5s;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    opacity: 0.5;
+}
+
+.hotline-phone-ring-circle-fill {
+    width: 55px;
+    height: 55px;
+    top: 25px;
+    left: 25px;
+    position: absolute;
+    background-color: rgba(230, 8, 8, 0.7);
+    border-radius: 100%;
+    border: 2px solid transparent;
+    -webkit-animation: phonering-alo-circle-fill-anim 2.3s infinite ease-in-out;
+    animation: phonering-alo-circle-fill-anim 2.3s infinite ease-in-out;
+    transition: all .5s;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+.hotline-phone-ring-img-circle {
+    background-color: #e60808;
+    width: 33px;
+    height: 33px;
+    top: 37px;
+    left: 37px;
+    position: absolute;
+    background-size: 20px;
+    border-radius: 100%;
+    border: 2px solid transparent;
+    -webkit-animation: phonering-alo-circle-img-anim 1s infinite ease-in-out;
+    animation: phonering-alo-circle-img-anim 1s infinite ease-in-out;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hotline-phone-ring-img-circle .pps-btn-img {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.hotline-phone-ring-img-circle .pps-btn-img img {
+    width: 20px;
+    height: 20px;
+}
+
+.hotline-bar {
+    position: absolute;
+    background: rgba(230, 8, 8, 0.75);
+    height: 40px;
+    width: 180px;
+    line-height: 40px;
+    border-radius: 3px;
+    padding: 0 10px;
+    background-size: 100%;
+    cursor: pointer;
+    transition: all 0.8s;
+    -webkit-transition: all 0.8s;
+    z-index: 9;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 50px !important;
+    /* width: 175px !important; */
+    left: 33px;
+    bottom: 37px;
+}
+
+.hotline-bar>a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    text-indent: 50px;
+    display: block;
+    letter-spacing: 1px;
+    line-height: 40px;
+    font-family: Arial;
+}
+
+.hotline-bar>a:hover,
+.hotline-bar>a:active {
+    color: #fff;
+}
+
+@-webkit-keyframes phonering-alo-circle-anim {
+    0% {
+        -webkit-transform: rotate(0) scale(0.5) skew(1deg);
+        -webkit-opacity: 0.1;
+    }
+
+    30% {
+        -webkit-transform: rotate(0) scale(0.7) skew(1deg);
+        -webkit-opacity: 0.5;
+    }
+
+    100% {
+        -webkit-transform: rotate(0) scale(1) skew(1deg);
+        -webkit-opacity: 0.1;
+    }
+}
+
+@-webkit-keyframes phonering-alo-circle-fill-anim {
+    0% {
+        -webkit-transform: rotate(0) scale(0.7) skew(1deg);
+        opacity: 0.6;
+    }
+
+    50% {
+        -webkit-transform: rotate(0) scale(1) skew(1deg);
+        opacity: 0.6;
+    }
+
+    100% {
+        -webkit-transform: rotate(0) scale(0.7) skew(1deg);
+        opacity: 0.6;
+    }
+}
+
+@-webkit-keyframes phonering-alo-circle-img-anim {
+    0% {
+        -webkit-transform: rotate(0) scale(1) skew(1deg);
+    }
+
+    10% {
+        -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+    }
+
+    20% {
+        -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+    }
+
+    30% {
+        -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+    }
+
+    40% {
+        -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(0) scale(1) skew(1deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(0) scale(1) skew(1deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .hotline-bar {
+        display: none;
+    }
+}
+</style>
+
+
+
+
+
+<footer class="footer-part">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-xl-4">
+                <div class="footer-widget">
+                    <a class="footer-logo" href="https://shafey-idstore.com/">
+                        <img src="https://shafey-idstore.com/assets/storage/images/logo_light_HM8.png" alt="logo"></a>
+                    <p class="footer-desc">
+                        High quality id store, all types and all domains.</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xl-4">
+                <div class="footer-widget contact">
+                    <h3 class="footer-title">接触</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fa-solid fa-envelope"></i>                            <p>ahmed2002@gmail.com</p>
+                        </li>
+                        <li><i class="fa-solid fa-phone"></i>                            <p>+201030085306</p>
+                        </li>
+                        <li><i class="fa-solid fa-location-dot"></i>                            <p>1Hd- 50, 010 Avenue, NY 90001 United States</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xl-4">
+                <div class="footer-widget">
+                    <h3 class="footer-title">关联</h3>
+                    <div class="footer-links">
+                        <ul>
+                            <li><a href="https://shafey-idstore.com/client/policy">政策</a></li>
+                            <li><a href="https://shafey-idstore.com/client/faq">常见问题</a></li>
+                            <li><a href="https://shafey-idstore.com/client/contact">联系我们</a></li>
+                            <li><a href="https://shafey-idstore.com/client/document-api">API 文档</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="footer-bottom">
+                    <p class="footer-copytext">© All Copyrights Reserved by <a href="#">shafey id-store</a>
+                        | Software By <a href="https://www.cmsnt.co/">CMSNT.CO</a></p>
+                    <div class="footer-card">
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="https://shafey-idstore.com/public/client/vendor/bootstrap/jquery-1.12.4.min.js"></script>
+<script src="https://shafey-idstore.com/public/client/vendor/bootstrap/popper.min.js"></script>
+<script src="https://shafey-idstore.com/public/client/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="https://shafey-idstore.com/public/client/vendor/countdown/countdown.min.js"></script>
+<script src="https://shafey-idstore.com/public/client/vendor/niceselect/nice-select.min.js"></script>
+<script src="https://shafey-idstore.com/public/client/vendor/slickslider/slick.min.js"></script>
+<script src="https://shafey-idstore.com/public/client/vendor/venobox/venobox.min.js"></script>
+<script src="https://shafey-idstore.com/public/client/js/nice-select.js"></script>
+<script src="https://shafey-idstore.com/public/client/js/countdown.js"></script>
+<script src="https://shafey-idstore.com/public/client/js/accordion.js"></script>
+<script src="https://shafey-idstore.com/public/client/js/venobox.js"></script>
+<script src="https://shafey-idstore.com/public/client/js/slick.js"></script>
+<script src="https://shafey-idstore.com/public/client/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+flatpickr("#example-flatpickr-range");
+</script>
+<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+
+
+ 
 </body>
+
 </html>
+
+
